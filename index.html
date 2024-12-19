@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equation Solver</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Simultaneous Equations Solver</h2>
+      <div class="method-select">
+        <select id="methodSelect">
+          <option value="gaussian">Gaussian Elimination</option>
+          <option value="jacobi">Jacobi Method</option>
+          <option value="gaussSeidel">Gauss-Seidel Method</option>
+        </select>
+      </div>
+      <div id="iterationControl" class="iteration-control">
+        <label>Number of Iterations:</label>
+        <input type="number" id="iterations" min="1" value="1" />
+      </div>
+      <div class="random-control">
+        <div class="range-inputs">
+          <div class="range-group">
+            <label>Min:</label>
+            <input type="number" id="minRange" value="1" min="-50" max="49" />
+          </div>
+          <div class="range-group">
+            <label>Max:</label>
+            <input type="number" id="maxRange" value="50" min="-49" max="50" />
+          </div>
+        </div>
+        <div class="random-buttons">
+          <button type="button" class="random-btn" id="randomSimple">
+            Random (1-50)
+          </button>
+          <button type="button" class="random-btn" id="randomCustom">
+            Random (Custom)
+          </button>
+          <button
+            type="button"
+            class="random-btn sign-mode-btn"
+            id="signModeToggle"
+          >
+            Sign Mode: Mixed
+          </button>
+        </div>
+      </div>
+      <form id="equationForm">
+        <div class="equation">
+          <div class="input-group">
+            <input type="number" id="x1" step="any" placeholder="0" required />
+            <label>x</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="y1" step="any" placeholder="0" required />
+            <label>y</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="z1" step="any" placeholder="0" required />
+            <label>z</label>
+          </div>
+          <div class="input-group">
+            <span>=</span>
+            <input type="number" id="d1" step="any" placeholder="0" required />
+          </div>
+        </div>
+
+        <div class="equation">
+          <div class="input-group">
+            <input type="number" id="x2" step="any" placeholder="0" required />
+            <label>x</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="y2" step="any" placeholder="0" required />
+            <label>y</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="z2" step="any" placeholder="0" required />
+            <label>z</label>
+          </div>
+          <div class="input-group">
+            <span>=</span>
+            <input type="number" id="d2" step="any" placeholder="0" required />
+          </div>
+        </div>
+
+        <div class="equation">
+          <div class="input-group">
+            <input type="number" id="x3" step="any" placeholder="0" required />
+            <label>x</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="y3" step="any" placeholder="0" required />
+            <label>y</label>
+          </div>
+          <div class="input-group">
+            <span>+</span>
+            <input type="number" id="z3" step="any" placeholder="0" required />
+            <label>z</label>
+          </div>
+          <div class="input-group">
+            <span>=</span>
+            <input type="number" id="d3" step="any" placeholder="0" required />
+          </div>
+        </div>
+
+        <button type="submit" class="solve-btn">Solve Equations</button>
+        <div class="result" id="result">Solution will appear here</div>
+      </form>
+
+      <div class="attribution">
+        Made with ❤️ by
+        <a
+          href="https://sokandesujal.github.io/Portfolio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Sujal Sokande</a
+        >
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
